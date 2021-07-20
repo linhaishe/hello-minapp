@@ -1,1 +1,78 @@
 /* pages/list/list.wxss */
+#incomeBox{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  /* border:5rpx solid red; */
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.mBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nabla {
+  width: 0px;
+  height: 0px;
+  /* border:1rpx solid red; */
+  border-top: 15rpx solid black;
+  border-left: 15rpx solid transparent;
+  border-right: 15rpx solid transparent;
+}
+
+.title{
+  color: #808080;
+  font-size: 30rpx;
+}
+
+.money{
+  color: black;
+  font-size: 25rpx;
+  margin-top: 10rpx;
+}
+
+.titleBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+/* .shouzhibox{
+  padding: 20rpx;
+} */
+
+.header,.list{
+  display:flex;
+  justify-content: space-between;
+  padding: 20rpx;
+
+}
+
+.header{
+  color: black;
+  background: rgba(128, 128, 128,0.1);
+  height: 50rpx;
+  font-size: 30rpx;
+}
+.list{
+  border-bottom: 3rpx solid gray;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 25rpx;
+}
+image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.markLeft{
+  display: flex;
+  align-items: center;
+}
+

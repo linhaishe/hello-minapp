@@ -5,9 +5,40 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    y:'2021',
+    m:'07',
+    list:[
+      {
+        date:'11-02',
+        week:'星期一',
+        income:'2000',
+        pay:'1000',
+        data:[
+          {tip:"打车",mark:'下雨了',price:20,state:'pay'},
+          {tip:"工资",mark:'10月',price:2000,state:'income'},
+          {tip:"购物",mark:'买衣服',price:200,state:'pay'}
+        ]
+      },
+      {
+        date:'11-03',
+        week:'星期二',
+        income:'0',
+        pay:'200',
+        data:[
+          {tip:"购物",mark:'买衣服',price:200,state:'pay'}
+        ]
+      }
+    ]
   },
-
+  dateChange(event){
+    console.log(event.detail.value)
+    let arr=event.detail.value.split('-');
+    this.setData({
+      y:arr[0],
+      m:arr[1]
+      
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
