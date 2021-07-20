@@ -1,0 +1,97 @@
+/* pages/add/add.wxss */
+.tabContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120rpx;
+  border: 1rpx solid #ffd952;
+  background-color: #ffd952;
+}
+
+#tab1,#tab2{
+ width: 250rpx;
+ height: 50rpx;
+ border: 1rpx solid #000;
+ border-radius: 10rpx;
+padding: 10rpx;
+text-align: center;
+}
+
+#tab1{
+  margin-right: 3rpx;
+}
+/* .sel{
+  border: 3rpx solid #faca82;
+   border-radius: 10rpx;
+   padding: 10rpx;
+ } */
+
+
+.active{
+  color: red;
+}
+.on{
+  color:blue
+}
+.catagoryBox{
+  /* margin-top: 15rpx; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding:30rpx;
+  width: 94%;
+}
+.catagory{
+  /* flex:1; */
+  /* width: 15.8%;
+  min-width:15.8%;
+  max-width: 15.8%;;
+  height: 40rpx; */
+  text-align: center;
+  vertical-align: center;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+  color: #000;
+  height: 40rpx;
+  /* width: 70rpx; */
+  width: 16.6%;
+  border: 3rpx solid #ffd952;
+   border-radius: 5rpx;
+   padding: 5rpx;
+   background-color: #ffd952;
+   font-size: 30rpx;
+}
+
+.dataPickerBox{
+  border-top: 3rpx solid black;
+  border-bottom: 3rpx solid black;
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.weui-input{
+  width: 70%;
+  font-size: 20rpx;
+  background: rgba(128, 128, 128,0.1);
+  color: #808080;
+  padding-left: 10rpx;
+}
+.mark-input{
+  margin-top: 20rpx;
+  width: 96%;
+  height: 80rpx;
+  /* font-size: 20rpx; */
+  background: rgba(128, 128, 128,0.1);
+  color: #808080;
+  padding-left: 30rpx;
+}
+button{
+  margin-top: 20rpx;
+  height: 80rpx;
+  background-color: #ffd952;
+}

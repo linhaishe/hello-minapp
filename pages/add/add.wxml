@@ -1,0 +1,32 @@
+<!--pages/add/add.wxml-->
+<view class="container">
+<view class="tabContainer">
+<view id="tab1" bindtap="changeSel1" class="{{sel?'':'active'}}">支出</view>
+<view id="tab2"  bindtap="changeSel2" class="{{sel?'active':''}}">收入</view>
+</view>
+<view class="catagoryBox">
+  <view bindtap="sel" data-index="{{index}}" class="{{index==selTip?'on':''}} catagory" wx:for="{{sel?incomeTip:payTip}}" >{{item}}</view>
+</view>
+<view class="dataPickerBox">
+<view>
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="picker">
+  {{date}}
+    </view>
+  </picker>
+  </view>
+
+  <view class="input-section">
+    <input class="weui-input" auto-focus placeholder="请输入金额"/>
+  </view>
+</view>
+<view class="input-section">
+    <input class="mark-input" auto-focus placeholder="添加备注"/>
+</view>
+
+<button>确认</button>
+
+
+
+<!-- <image src="../../img/ZB.png"></image> -->
+</view>

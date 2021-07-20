@@ -1,13 +1,35 @@
 {
   "pages":[
+    "pages/list/list",
+    "pages/add/add",
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffd952",
+    "navigationBarTitleText": "记账宝",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color":"#999",
+    "selectedColor":"#ffd952",
+    "backgroundColor":"#eee",
+    "borderStyle":"white",
+    "list":[
+      {
+        "pagePath":"pages/list/list",
+        "text":"账本",
+        "iconPath":"./img/ZB.png",
+        "selectedIconPath": "./img/linghtZB.png"
+      },
+      {
+        "pagePath":"pages/add/add",
+        "text":"记一笔",
+        "iconPath":"./img/jia.png",
+        "selectedIconPath": "./img/lightjia.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
