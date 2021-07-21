@@ -1,16 +1,13 @@
-<!--pages/list/list.wxml-->
+<!-- pages/list/list.wxml -->
 <!-- 总收入显示 -->
 <view id="incomeBox">
   <view class="titleBox">
-    <picker 
-      mode="date"
-      fields="month"
-      bindchange="dateChange"
-    >
-      <view class="title">{{y}}年</view> 
+    <picker mode="date" fields="month" bindchange="dateChange">
+      <view class="title">{{y}}年</view>
       <view class="mBox">
-      <view class="money">{{m}}月</view><text class="nabla"></text>
-    </view>
+        <view class="money">{{m}}月</view>
+        <text class="nabla"></text>
+      </view>
     </picker>
   </view>
   <view class="titleBox">
@@ -26,23 +23,26 @@
     <view class="money">1000</view>
   </view>
 </view>
-
 <!-- 收支渲染 -->
 <view wx:for="{{list}}" wx:key="index" class="shouzhibox">
   <view class="header">
-    <view><text>{{item.date}}</text><text>{{item.week}}</text></view>
-    <view><text>收入：{{item.income}}</text><text>支出：{{item.pay}}</text></view>
+    <view>
+      <text>{{item.date}}</text>
+      <text>{{item.week}}</text>
+    </view>
+    <view>
+      <text>收入：{{item.income}}</text>
+      <text>支出：{{item.pay}}</text>
+    </view>
   </view>
   <view class="list" wx:for="{{item.data}}" wx:key="index">
-  
-  <view class="markLeft">
-    <image src="../../img/ZB.png"></image>
-    <text>{{item.tip}}</text>
-    <text>（{{item.mark}}）</text>
-  </view>
-  <view>
-    <text>{{item.state=='pay'?'-':'+'}}{{item.price}}</text>
-  </view>
+    <view class="markLeft">
+      <image src="../../img/ZB.png"></image>
+      <text>{{item.tip}}</text>
+      <text>（{{item.mark}}）</text>
+    </view>
+    <view>
+      <text>{{item.state=='pay'?'-':'+'}}{{item.price}}</text>
+    </view>
   </view>
 </view>
-
