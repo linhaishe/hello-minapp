@@ -1,0 +1,8 @@
+text {
+  border: 1px solid yellow;
+}
+.title {
+  color: green;
+  font-size: 50rpx;
+}
+/*# sourceMappingURL=./demo1.wxss.map */

@@ -1,0 +1,133 @@
+<!-- 1. 字符串 -->
+<view class="title">1. 字符串</view>
+<text>{{msg}}</text>
+<!-- 2. 数字 -->
+<view class="title">2. 数字</view>
+<text>{{num}}</text>
+<view></view>
+<!-- 3. 布尔类型 -->
+<view class="title">3. 布尔类型</view>
+<text>{{isGirl}}</text>
+<!-- 4. 对象 -->
+<view class="title">4. 对象</view>
+<view>{{person.age}}</view>
+<!-- 5. 在标签中的属性中使用 -->
+<view class="title">5. 自定义属性</view>
+<view data-num='{{num}}'>自定义属性</view>
+<!-- 6. 使用布尔类型充当属性 checked
+    a. 字符串和花括号之间不要存在空格 否则会导致识别失败
+    以下写法就是错误的示范 
+        <checkbox  checked="   {{isChecked}}" ></checkbox> -->
+<checkbox checked="{{isChecked}}"></checkbox>
+<view class="title">7. 表达式运算</view>
+<!-- 7. 表达式的运算
+1. 可以在花括号中 加入表达式 -- ‘语句’
+2. 表达式 -- 指的是一些简单运算 数字运算 字符串 拼接 逻辑运算
+    a. 数字加减
+    b. 字符串拼接
+    c. 三元表达式
+3. 语句
+  1. 复杂代码
+    a. if else
+    b. switch
+    c. do while
+    d. for ... -->
+<view>加法：{{1+1}}</view>
+<view>字符串拼接：{{'1'+'1'}}</view>
+<view>三元运算：{{11%3===0?'偶数':'奇数'}}</view>
+<view class="title">8. 列表循环</view>
+<!-- 8. 列表循环 -->
+<!-- wx:for='{{数组或者对象}}' -->
+<!-- wx:for-item="循环项的名称" -->
+<!-- wx:for-index="循环项的索引" -->
+<!-- wx:key="绑定唯一的值" 用来提高列表渲染的性能
+1. wx:key 绑定一个普通字符串的时候，那么这个字符串的名称 肯定是 循环数组中的 对象的 唯一属性  即wx:key="id"
+
+2. wx:key = '*this' 就表示 你的数组是一个普通的数组 *this 表示是 循环项
+[1,2,3,4,66] or ['1','2','text'] 
+
+3. 当出现数组的潜逃循环的时候 尤其要注意 以下绑定的名称 不要重名 
+wx:for-item='item' wx:for-index='index'
+
+4. 默认情况下 我们不写 
+wx:for-item='item' 和 wx:for-index='index'
+小程序会把 循环项的名称 和 索引的名称 item 和 index 只有一层循环的话
+（wx:for-item='item' 和 wx:for-index='index'）可以省略 -->
+<view wx:for="{{array}}" wx:for-item='item' wx:for-index='index' wx:key="id">
+    索引：{{index}}--值:{{item.name}}
+</view>
+<view class="title">9. 对象循环</view>
+<!-- 9. 对象循环 -->
+<!-- wx:for='{{对象}}' -->
+<!-- wx:for-item="对象的值" -->
+<!-- wx:for-index="对象的属性" -->
+<!-- 循环对象的时候 最好把item 和 index 的名称都修改一下 -->
+<!-- wx:for-item="value" -->
+<!-- wx:for-index="key" -->
+<view>对象循环index and item</view>
+<view wx:for="{{person}}">属性：{{index}}--值:{{item}}</view>
+<view>对象循环key and value</view>
+<view wx:for="{{person}}" wx:key="age" wx:for-item="value" wx:for-index="key">
+    属性：{{key}}--值:{{value}}
+</view>
+<view class="title">10. block</view>
+<!-- 10 block  
+1. 占位符标签
+2. 写代码的时候 可以看到这标签的存在
+3. 页面渲染 小程序会把他移除掉
+4. 就是文字保留，标签去除，只能用在for循环 -->
+<view>
+    <block class="my_list" wx:for="{{array}}" wx:for-item='item' wx:for-index='index' wx:key="id">
+        索引：{{index}}--值:{{item.name}}
+    </block>
+</view>
+<!-- 11.  条件渲染 
+1. wx:if="{{true/false}}"
+    a.. if , else , if else -- wx:if,wx:elif,wx:else
+2. hidden
+    a. 在标签上直接加入属性 hidden
+    b. hidden="{{true}}" 
+    
+3. 什么场景下用哪个
+    a. 当标签不是频繁的切换显示，优先使用wx:if
+        直接把标签从页面结构移除
+    b.  当标签频繁的切换显示，优先使用hidden 
+        通过添加样式的方式实现移除 
+        hidden 属性不要和 display 样式一起使用 -->
+<view class="title">11. 条件渲染</view>
+<view>条件渲染</view>
+<view wx:if="{{true}}">显示</view>
+<view wx:if="{{false}}">隐藏</view>
+<!-- elseif -->
+<view>--------------</view>
+<view wx:if="{{false}}">1</view>
+<view wx:elif="{{false}}">2</view>
+<view wx:else>3</view>
+<view>--------------</view>
+<view hidden>hidden1</view>
+<view hidden="{{false}}">hidden2</view>
+<view>--------------</view>
+<view wx:if="{{false}}">if隐藏</view>
+<view hidden>hidden2</view>
+<view class="title">12.  双向绑定</view>
+<!-- 12. 双向绑定 -->
+<!-- 1. 需要给input 标签绑定 input 事件
+    绑定关键字 bindinput
+2. 如何获取 输入框的值
+    通过事件源对象获取
+3. 把输入框的值 赋值到 data 当中
+this.setData({
+    num:e.detail.value
+}) 
+4. 
+
+a. 需要加入一个点击事件 bindtap 
+b. 无法在小程序当中的 事件中 直接传参
+c. 通过自定义属性的方式来传递参数 
+d. 事件源中获取 自定义属性 -->
+<view>--------------</view>
+<text>输入框：</text>
+<input type="text" bindinput="handleInput" />
+<button bindtap="handletTap" data-operation="{{1}}">+</button>
+<button bindtap="handletTap" data-operation="{{-1}}">-</button>
+<view>双向绑定:{{num}}</view>

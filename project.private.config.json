@@ -23,6 +23,12 @@
           "pathName": "pages/list/list",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/demo09/demo09",
+          "pathName": "pages/demo09/demo09",
+          "query": "",
+          "scene": null
         }
       ]
     }

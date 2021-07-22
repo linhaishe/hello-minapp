@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "记账宝记一笔",
+  "navigationBarTextStyle":"black"
 }
