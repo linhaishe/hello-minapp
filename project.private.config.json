@@ -29,6 +29,12 @@
           "pathName": "pages/demo09/demo09",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/demo16/demo16",
+          "pathName": "pages/demo16/demo16",
+          "query": "",
+          "scene": null
         }
       ]
     }
